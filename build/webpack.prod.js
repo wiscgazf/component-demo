@@ -13,7 +13,7 @@ module.exports = merge(webpackBaseConfig, {
         path: path.resolve(__dirname, '../lib'),
         filename: 'zf-ui.min.js',
         publicPath: '/lib/',
-        library: 'lime-ui',
+        library: 'zf-ui',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

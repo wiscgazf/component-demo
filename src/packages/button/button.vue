@@ -1,5 +1,5 @@
 <template>
-  <button class="zf-button" :class="{[`zf-button-${type}`]: true}" type="button">
+  <button class="zf-button" :class="{[`zf-button-${type}`]: true}" type="button" @click="click">
     <slot></slot>
   </button>
 </template>
@@ -16,6 +16,12 @@ export default {
       },
       type: String,
       default: 'default'
+    }
+  },
+
+  methods: {
+    click() {
+      this.$emit('click');
     }
   }
 };

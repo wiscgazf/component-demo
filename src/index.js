@@ -1,17 +1,20 @@
-import Button from './packages/button/index.js'
+import Button from './packages/button';
+import Notice from './packages/notice';
 
 import './styles/index.scss';
 
 
 const components = {
-    zfButton: Button,
-}
+    zfButton: Button
+};
 
-const install = function (Vue, options = {}) {
+const install = function (app, options = {}) {
     Object.keys(components).forEach(key => {
-        Vue.component(key, components[key]);
+        app.component(key, components[key]);
     });
-}
 
-export default install
+    app.config.globalProperties.$notice = Notice;
+};
+
+export default install;
 
