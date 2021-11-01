@@ -5,7 +5,7 @@ module.exports = {
     description: '这是我的第一个 VuePress 站点',
     themeConfig: {
         logo: 'https://vuejs.org/images/logo.png',
-        repo: 'https://gitlab.com/foo/bar',
+        repo: 'https://github.com/wiscgazf/zf-ui',
         repoLabel: 'Zf-UI',
         navbar: [
             { text: '主页', link: '/' },
