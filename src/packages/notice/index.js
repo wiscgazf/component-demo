@@ -1,6 +1,7 @@
 import { createVNode, render } from 'vue';
 import { debounce} from '../../utils/util';
 import Notice from './notice.vue';
+import '../../styles/component/notice.scss'
 
 export default debounce(function (options) {
     const props = {

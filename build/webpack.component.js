@@ -1,20 +1,27 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpackBaseConfig = require('./webpack.base.js');
+const webpackBaseConfig = require('./webpack.base');
+
+const files = fs.readdirSync(path.resolve(__dirname, '../src/packages'));
+
+const entrys = {};
+for (const file of files) {
+    entrys[file] = path.resolve(__dirname, `../src/packages/${ file }/index.js`);
+}
 
 module.exports = merge(webpackBaseConfig, {
-    devtool: 'source-map',
+    entry: entrys,
     mode: 'production',
-    entry: {
-        main: path.resolve(__dirname, '../src/index.js')
-    },
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, '../lib'),
-        filename: 'zf-ui.min.js',
         publicPath: '/lib/',
-        library: 'zf-ui',
+        filename: '[name].js',
+        chunkFilename: '[id].js',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
@@ -31,7 +38,7 @@ module.exports = merge(webpackBaseConfig, {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new MiniCssExtractPlugin({
-            filename: 'styles/zf-ui.min.css'
+            filename: 'styles/component/[name].css'
         })
     ]
 });

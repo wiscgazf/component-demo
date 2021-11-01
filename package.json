@@ -2,10 +2,12 @@
   "name": "zf-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/zf-ui.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress",
+    "build:component": "cross-env NODE_ENV=production webpack --config build/webpack.component.js --progress",
+    "build:lib": "cross-env NODE_ENV=production npm run build && npm run build:component",
     "deploy": "gh-pages -d docs/.vuepress/dist",
     "deploy:build": "npm run docs:build && npm run deploy",
     "docs:dev": "vuepress dev docs",

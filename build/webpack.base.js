@@ -86,10 +86,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.VERSION': `'${ pkg.version }'`
         }),
-        new VueLoaderPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'styles/zf-ui.min.css'
-        })
+        new VueLoaderPlugin()
     ],
     resolve: {
         extensions: [ '.js', '.vue', '.less', '.scss' ],
