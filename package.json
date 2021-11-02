@@ -1,6 +1,7 @@
 {
-  "name": "zf-ui",
-  "version": "1.0.0",
+  "name": "zf-cool-ui",
+  "version": "1.0.1",
+  "private": false,
   "description": "",
   "main": "lib/zf-ui.min.js",
   "scripts": {
