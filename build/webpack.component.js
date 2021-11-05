@@ -38,7 +38,7 @@ module.exports = merge(webpackBaseConfig, {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new MiniCssExtractPlugin({
-            filename: 'styles/component/[name].css'
+            filename: 'styles/[name].css'
         })
     ]
 });

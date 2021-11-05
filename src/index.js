@@ -1,5 +1,5 @@
 import Button from './packages/button';
-import Notice from './packages/notice';
+// import Notice from './packages/notice';
 
 import './styles/index.scss';
 
@@ -13,7 +13,7 @@ const install = function (app, options = {}) {
         app.component(key, components[key]);
     });
 
-    app.config.globalProperties.$notice = Notice;
+    // app.config.globalProperties.$notice = Notice;
 };
 
 export default install;
